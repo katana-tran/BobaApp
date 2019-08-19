@@ -1,0 +1,2 @@
+class CupToppingsController < ApplicationController
+end
