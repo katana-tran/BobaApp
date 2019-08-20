@@ -1,8 +1,4 @@
 class CupsController < ApplicationController
-<<<<<<< HEAD
-    def index
-    end
-=======
     before_action :set_params, only: [:create, :update]
     before_action :find_instance, only: [:show, :edit]
     before_action :all_toppings, only: [:index, :show]
@@ -31,6 +27,9 @@ class CupsController < ApplicationController
     def edit
         find_instance
     end
+
+    def size
+    end
     
     def update
         @cup=Cup.first.update(set_params)
@@ -41,9 +40,14 @@ class CupsController < ApplicationController
     private
 
     def set_params
-        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount)
+        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount, :size)
 
     end
+
+    # def tea_url
+    #     @tea_url= find_instance.name
+    # end
+
 
     def find_instance
         @cup= Cup.first
@@ -64,5 +68,4 @@ class CupsController < ApplicationController
         end
     end
 
->>>>>>> 57b63c1614765f42007e2a4ce0c97d5299938d0c
 end

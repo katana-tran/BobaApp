@@ -1,0 +1,13 @@
+<h1>Pick your size</h1>
+
+<%=form_for Cup.first do |f|%>
+<%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
+<%=f.submit 'Pick size'%>
+
+<%=f.collection_select :tea_id, Tea.all, :id, :name%>
+<%=f.submit 'Pick tea'%>
+
+<%=f.collection_select :straw_id, Straw.all, :id, :color%>
+<%=f.submit 'Pick straw'%>
+
+<%end%>
