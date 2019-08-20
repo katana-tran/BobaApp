@@ -68,5 +68,9 @@ class CupsController < ApplicationController
         end
     end
 
+    def 404
+    end
+
+
 
 end
