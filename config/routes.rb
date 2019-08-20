@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/choices', to: 'cups#size'
   get '/all-my-teas', to: 'cups#index', as: 'cups'
   get '/create-tea', to: 'cups#new'
-  get '/all-my-teas/:id', to: 'cups#show'
+  get '/all-my-teas/:id', to: 'cups#show',as: 'cup'
     # resources :users
 
 

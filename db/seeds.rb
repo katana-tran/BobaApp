@@ -72,7 +72,12 @@ def create_cups
         tea_id: Tea.all.sample.id,
         user_id:User.all.sample.id)
     end
+    100.times do 
+        Cup.all.sample.toppings << Topping.all.sample
+    end
 end
+
+
 
 
 seed_quotes

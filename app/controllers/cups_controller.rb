@@ -4,7 +4,7 @@ class CupsController < ApplicationController
     before_action :all_toppings, only: [:index, :show]
 
     def index
-        @cup= Cup.new
+        @cups = Cup.all
         # @cups = Cup.all
         # byebug
     end
@@ -21,7 +21,8 @@ class CupsController < ApplicationController
     end
 
     def show
-        find_instance
+        @cup = Cup.find(params[:id])
+        @toppings = @cup.toppings
     end
 
     def edit

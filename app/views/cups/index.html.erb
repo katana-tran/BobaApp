@@ -1,7 +1,10 @@
-<h1>List of bubble names</h1>
+<h1>List of bubble CUPs names</h1>
 
-<h2><%=@all_names%></h2>
+<%@cups.each do |cup|%>
+    <%= link_to 'View Cup', cup_path(cup)%>
+    <%= cup.name%> <br>
+    <%end%>
 
-<%= link_to 'Sign Out', signout_path%>
+<p><%= link_to 'Sign Out', signout_path%></p>
 
 

@@ -1,10 +1,10 @@
-LOGIN PAGE!
+<h1>LOGIN PAGE!</h1>
 <%= flash[:error_message] %>
 <%= form_for :login do |f|%>
-    <%= f.label :username%>
-    <%= f.text_field :username%>
-    <%= f.label :password%>
-    <%= f.password_field :password%>
-    <%= f.submit 'LOG IN'%>
+    <p><%= f.label :username%>
+    <%= f.text_field :username%></p>
+    <p><%= f.label :password%>
+    <%= f.password_field :password%></p>
+    <p><%= f.submit 'LOG IN'%></p>
     <p>New user? <%= link_to 'Sign Up Here', signup_path %></p>
     <%end%>

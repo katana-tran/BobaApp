@@ -1,3 +1,6 @@
-<h1>Show page cup_path(@cup)</h1>
+<h1>Show Toppings per Cup</h1>
 
-<h2><%=@all_names%></h2>
+<%@toppings.each do |topping|%>
+    <%=topping.name%>
+    <img src = topping.img_url></br>
+    <%end%>
