@@ -50,7 +50,29 @@ def generate_memes
     end
 end
 
+def make_straws
+    Straw.create(color:"Lavender")
+    Straw.create(color:"Baby Blue")
+    Straw.create(color:"Sunshine")
+end
+
+def user_generator
+    20.times do 
+        User.create(name:Faker::Faker::Name.name)
+        #Faker::Internet.email
+    end
+end
+
+def create_cups
+    20.times do
+        Cup.create(name:Faker::Coffee.blend_name,straw_id:Straw.all.sample.id,tea_id: Tea.all.sample.id,user_id:User.all.sample.id)
+    end
+end
+
 
 seed_quotes
 generate_memes
 create_teas
+make_straws
+user_generator
+create_cups
