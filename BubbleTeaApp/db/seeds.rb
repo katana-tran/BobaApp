@@ -50,7 +50,6 @@ def generate_memes
     end
 end
 
-
 seed_quotes
 generate_memes
 create_teas
