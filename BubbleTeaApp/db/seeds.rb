@@ -12,9 +12,14 @@ require 'rest-client'
 Quote.destroy_all
 Tea.destroy_all
 Topping.destroy_all
+<<<<<<< HEAD
 User.destroy_all
 Straw.destroy_all
 Cup.destroy_all
+=======
+Cup.destroy_all
+Straw.destroy_all
+>>>>>>> 57b63c1614765f42007e2a4ce0c97d5299938d0c
 
 def seed_quotes
     50.times do 
@@ -61,7 +66,12 @@ end
 
 def user_generator
     20.times do 
+<<<<<<< HEAD
         User.create(name:Faker::Name.name,username:Faker::Name.name,password:'banana')
+=======
+        # User.create(name:Faker::Faker::Name.name)
+        User.create(name:Faker::Name.name)
+>>>>>>> 57b63c1614765f42007e2a4ce0c97d5299938d0c
         #Faker::Internet.email
     end
 end

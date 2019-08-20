@@ -4,4 +4,12 @@ class Cup < ApplicationRecord
     belongs_to :tea
     belongs_to :user
     belongs_to :straw
+
+
+
+    
+
+
+
+
 end
