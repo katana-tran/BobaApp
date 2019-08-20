@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
  get '/bubbles/edit', to: 'cups#edit'
  get '/cups/all', to: 'cups#index'
+ get '/cups/size', to: 'cups#size'
 #  get '/cups/all', to: 'cups#show'
 
 

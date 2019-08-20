@@ -1,0 +1,6 @@
+<h1>Pick your size</h1>
+
+<%=form_for Cup.first do |f|%>
+<%=f.select :amount, options_for_select(['Small', 'Medium', 'Large'])%>
+<%=f.submit%>
+<%end%>
