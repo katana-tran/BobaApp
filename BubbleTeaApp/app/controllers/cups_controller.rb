@@ -1,4 +1,8 @@
 class CupsController < ApplicationController
+<<<<<<< HEAD
+    def index
+    end
+=======
     before_action :set_params, only: [:create, :update]
     before_action :find_instance, only: [:show, :edit]
     before_action :all_toppings, only: [:index, :show]
@@ -63,4 +67,5 @@ class CupsController < ApplicationController
         end
     end
 
+>>>>>>> 57b63c1614765f42007e2a4ce0c97d5299938d0c
 end
