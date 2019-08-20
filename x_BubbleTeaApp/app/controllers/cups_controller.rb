@@ -44,6 +44,11 @@ class CupsController < ApplicationController
 
     end
 
+    # def tea_url
+    #     @tea_url= find_instance.name
+    # end
+
+
     def find_instance
         @cup= Cup.first
     end
@@ -62,5 +67,6 @@ class CupsController < ApplicationController
             top.name
         end
     end
+
 
 end
