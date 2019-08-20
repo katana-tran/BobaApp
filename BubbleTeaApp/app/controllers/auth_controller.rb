@@ -9,7 +9,7 @@ class AuthController < ApplicationController
             redirect_to cups_path
         else
             flash[:error_message] = "Wrong login info. Try again."
-            render :login
+            render :signin
         end
     end
 

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :teas
   resources :toppings
   resources :cups, except: [:edit]
-  resources :users, except: [:new,:create]
+  resources :users
   get '/login', to: 'auth#signin', as: 'signin'
   post '/login', to: 'auth#verify'
   delete '/login', to: 'auth#signout', as: 'signout'
