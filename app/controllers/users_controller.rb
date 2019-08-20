@@ -11,17 +11,18 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        byebug
         if @user.save
             session[:user_id] = @user.id
             redirect_to cups_path
         else 
-            redirect_to users_new_path
+            redirect_to signup_path
             flash[:error_message] = "USERNAME TAKEN"
         end
     end
 
     private 
     def user_params
-        params.require(:user).permit(:username,:password_digest,:password,:name)
+        params.require(:user).permit(:username,:password_digest,:password,:name,:email)
     end
 end
