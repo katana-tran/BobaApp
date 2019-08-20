@@ -1,7 +1,2 @@
-<h1>Insert site title here</h1>
+<h2><%=@all_names%></h2>
 
-<h4>Pick your bubbles!</h4>
-
-<%=form_for Cup.new do |f|%>
-<%=f.collection_select @cup.cup_toppings.topping_id, Topping.all, :id, :name%>
-<%end%>

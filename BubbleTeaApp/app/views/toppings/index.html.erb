@@ -2,6 +2,21 @@
 
 <h4>Add or delete bubbles:</h4>
 
+
+<%# #########I'm thinking we should store these in a table and reference that when using the group_colelction_select on cups/index#######  %>
+
+
+<%# #########on this page are we only going to have a search feature?#######  %> 
+<%# #########depending on all of these questions, maybe upload new should be a stretch goal#######  %> 
+<%# check_box(object_name, method, options = {}, checked_value = "1", unchecked_value = "0")  %> 
+
+<%=form_for @topping do |f|%>
+<%=f.select(:topping, index)%>
+<%end%>
+
+<%# #########alternate approach#######  %>
+<%= form_for @topping, method: :delete do |f| %>
+
 <%=form_for @topping do |f|%>
 <%=f.select(:topping, index)%>
 <%end%>

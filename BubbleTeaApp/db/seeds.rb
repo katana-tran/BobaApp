@@ -12,6 +12,8 @@ require 'rest-client'
 Quote.destroy_all
 Tea.destroy_all
 Topping.destroy_all
+Cup.destroy_all
+Straw.destroy_all
 
 def seed_quotes
     50.times do 
@@ -50,8 +52,6 @@ def generate_memes
     end
 end
 
-<<<<<<< HEAD
-=======
 def make_straws
     Straw.create(color:"Lavender")
     Straw.create(color:"Baby Blue")
@@ -60,7 +60,8 @@ end
 
 def user_generator
     20.times do 
-        User.create(name:Faker::Faker::Name.name)
+        # User.create(name:Faker::Faker::Name.name)
+        User.create(name:Faker::Name.name)
         #Faker::Internet.email
     end
 end
@@ -72,7 +73,6 @@ def create_cups
 end
 
 
->>>>>>> 4ae58368798a17438bb7a9a3192d737f52472382
 seed_quotes
 generate_memes
 create_teas
