@@ -27,6 +27,9 @@ class CupsController < ApplicationController
     def edit
         find_instance
     end
+
+    def size
+    end
     
     def update
         @cup=Cup.first.update(set_params)
@@ -37,9 +40,14 @@ class CupsController < ApplicationController
     private
 
     def set_params
-        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount)
+        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount, :size)
 
     end
+
+    # def tea_url
+    #     @tea_url= find_instance.name
+    # end
+
 
     def find_instance
         @cup= Cup.first
