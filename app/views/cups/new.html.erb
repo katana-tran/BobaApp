@@ -2,29 +2,42 @@
 
 <h4>Pick your bubbles!</h4>
 
-<%=form_for Cup.first do |f|%>
+<%=form_for @cup do |f|%>
 
-<%=f.label 'Bubbles'%>
+        <%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
+        
+        <%=f.collection_select :tea_id, Tea.all, :id, :name%>
+        
+        <%=f.collection_select :straw_id, Straw.all, :id, :color%>
+
+        <%=f.collection_select :user_id, User.all, :id, :name%>
+
+<%=f.label :name%>
+<%=f.text_field :name%><br>
 
 <%=f.label 'Amount'%><br>
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%> <br>
+<%#=f.collection_select :topping_ids, Topping.all, :id, :name%>
+<%#=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%> <br>
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name%>
-<%=f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6'])%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 <%=f.submit 'Create Boba'%>
 

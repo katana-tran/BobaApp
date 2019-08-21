@@ -5,6 +5,7 @@ class CreateCups < ActiveRecord::Migration[5.2]
       t.integer :tea_id
       t.integer :user_id
       t.string :name
+      t.string :size
       t.timestamps
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_212554) do
+ActiveRecord::Schema.define(version: 2019_08_19_185215) do
 
   create_table "cup_toppings", force: :cascade do |t|
     t.integer "cup_id"
@@ -24,10 +24,9 @@ ActiveRecord::Schema.define(version: 2019_08_20_212554) do
     t.integer "tea_id"
     t.integer "user_id"
     t.string "name"
+    t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "amount"
-    t.string "size"
   end
 
   create_table "quotes", force: :cascade do |t|
