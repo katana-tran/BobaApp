@@ -1,7 +1,7 @@
 class CupsController < ApplicationController
     before_action :set_params, only: [:create, :update]
-    before_action :find_instance, only: [:show, :edit]
-    before_action :all_toppings, only: [:index, :show]
+    before_action :find_instance, only: :edit
+    # before_action :all_toppings, only: [:index, :show]
 
     def index
         @cups = Cup.all
@@ -23,10 +23,10 @@ class CupsController < ApplicationController
     def show
         @cup = Cup.find(params[:id])
         @toppings = @cup.toppings
+        
     end
 
     def edit
-        find_instance
     end
 
     def size
@@ -55,18 +55,18 @@ class CupsController < ApplicationController
     end
 
 
-    def all_toppings
-        @all_cups= CupTopping.select do |cuptop|
-            cuptop.cup_id == Cup.first.id
-        end
+    # def all_toppings
+    #     @all_cups= CupTopping.select do |cuptop|
+    #         cuptop.cup_id == Cup.first.id
+    #     end
 
-        @all_topping= @all_cups.collect do |cups|
-            cups.topping
-        end
+    #     @all_topping= @all_cups.collect do |cups|
+    #         cups.topping
+    #     end
 
-        @all_names= @all_topping.collect do |top|
-            top.name
-        end
-    end
+    #     @all_names= @all_topping.collect do |top|
+    #         top.name
+    #     end
+    # end
 
 end

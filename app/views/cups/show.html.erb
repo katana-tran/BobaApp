@@ -1,6 +1,7 @@
-<h1>Show Toppings per Cup</h1>
+<h1><%=@cup.name%></h1>
+<h3>Show Toppings per Cup</h3>
 
 <%@toppings.each do |topping|%>
-    <%=topping.name%>
-    <img src = topping.img_url></br>
+    <%=topping.name%><br>
+    <img src = <%=topping.img_url%> width="150" height="150"></br>
     <%end%>
