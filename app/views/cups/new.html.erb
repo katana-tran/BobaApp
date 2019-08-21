@@ -4,6 +4,16 @@
 
 <%=form_for Cup.first do |f|%>
 
+
+<%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
+
+
+<%=f.collection_select :tea_id, Tea.all, :id, :name%>
+
+
+<%=f.collection_select :straw_id, Straw.all, :id, :color%>
+
+
 <%=f.label 'Bubbles'%>
 
 <%=f.label 'Amount'%><br>

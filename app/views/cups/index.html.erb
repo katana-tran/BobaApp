@@ -1,9 +1,14 @@
 <h1>List of bubble CUPs names</h1>
+<%# <h3><%= link_to 'Back to create', create_tea_path%>
+<%# </h3> %>
 
 <%@cups.each do |cup|%>
     <%= link_to 'View Cup', cup_path(cup)%>
     <%= cup.name%> <br>
     <%end%>
+
+<%=Cup.rand_quote%>
+
 
 <p><%= link_to 'Sign Out', signout_path%></p>
 

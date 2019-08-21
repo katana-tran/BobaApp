@@ -29,8 +29,9 @@ class CupsController < ApplicationController
     def edit
     end
 
-    def size
-    end
+    # def size
+    #     redirect_to create_tea_path
+    # end
     
     def update
         @cup=Cup.first.update(set_params)
@@ -53,6 +54,11 @@ class CupsController < ApplicationController
     def find_instance
         @cup= Cup.first
     end
+
+    def rand_quote
+        Quote.rand_quote
+    end
+
 
 
     # def all_toppings
