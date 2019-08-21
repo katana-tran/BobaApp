@@ -1,6 +1,6 @@
 class CupsController < ApplicationController
-    before_action :set_params, only: [:create, :update]
-    before_action :find_instance, only: :edit
+    # before_action :set_params, only: [:create, :update]
+    # before_action :find_instance, only: :edit
     # before_action :all_toppings, only: [:index, :show]
 
     def index
@@ -14,35 +14,36 @@ class CupsController < ApplicationController
     end
 
     def create
+        params[:cup][:topping_ids] = params[:topping_ids].map do |topping|
+            topping.to_i
+        end
         @cup = Cup.new(set_params)
+        byebug
         @cup.save
-        @amount= set_params(:amount)
-        redirect_to cup_path(Cup.first)
+        # @amount = set_params(:amount)
+        # byebug
+        redirect_to cup_path(@cup)
     end
 
     def show
         @cup = Cup.find(params[:id])
         @toppings = @cup.toppings
-        
     end
 
     def edit
     end
-
-    # def size
-    #     redirect_to create_tea_path
-    # end
     
     def update
-        @cup=Cup.first.update(set_params)
-        redirect_to cup_path(Cup.first)
+        @cup=Cup.find_by(params[:id])
+        @cup.update(set_params)
+        redirect_to cup_path(@cup)
     end
 
 
     private
 
     def set_params
-        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount, :size)
+        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount, :size, topping_ids: [])
 
     end
 
