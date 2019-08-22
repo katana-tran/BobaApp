@@ -1,6 +1,9 @@
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 
+<%# <h3><%= link_to 'Back to create', create_tea_path%>
+<%# </h3> %>
+
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
     <img src = <%=topping.img_url%> width="150" height="150"></br>

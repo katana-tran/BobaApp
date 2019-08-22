@@ -3,7 +3,7 @@ class Topping < ApplicationRecord
     has_many :cups, through: :cup_toppings
     validates :name, {presence: true, uniqueness: true}
     validates :img_url, {presence: true, uniqueness: true}
-    validates :is_it_proper_pic
+    validate :is_it_proper_pic
     # validates_format_of :img_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "whatever"
 
     def is_it_proper_pic

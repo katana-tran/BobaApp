@@ -19,18 +19,44 @@ class CupsController < ApplicationController
     end
 
     def create
-        params[:cup][:topping_ids] = params[:topping_ids].map do |topping|
+        cup = params[:topping_ids].map do |topping|
             topping.to_i
         end
+        params[:cup][:topping_ids] = cup.reverse
         params[:cup][:user_id] = session[:user_id]
         @cup = Cup.new(set_params)
+        #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
+    
         @cup.save
-        # @amount = set_params(:amount)
-        # byebug
-        redirect_to cup_path(@cup)
+        #we are geting the amount of toppings instances just put into the cup
+        length = params[:cup][:topping_ids].length
+
+
+        # XY = x
+        #for amount of topping instances that are put in, we need to multiple by the amount that was given to us
+
+        total_toppings = params[:amount].map do |topping|
+            topping.to_i
+        end
+        counter = 0
+        # binding.pry
+        temp = []
+        while counter < length
+            instance = Topping.all.find(Cup.last.topping_ids[total_toppings.length - counter - 1])
+            (total_toppings[counter] - 1).times do
+                temp << instance
+                #instance of topping
+            end
+            counter += 1
+            byebug
+        end
+        Cup.last.toppings << temp
+        redirect_to cup_path(Cup.last)
+
     end
 
     def show
+        byebug
         @cup = Cup.find(params[:id])
         if @cup.user_id == session[:user_id]
             @toppings = @cup.toppings
@@ -61,6 +87,7 @@ class CupsController < ApplicationController
         else
             @cup.delete
         redirect_to cups_path
+        end
     end
 
     private
@@ -74,10 +101,18 @@ class CupsController < ApplicationController
     #     @tea_url= find_instance.name
     # end
 
+    #for purposes of associating amount to topping
+
+
 
     def find_instance
         @cup= Cup.first
     end
+
+    # def rand_quote
+    #     Quote.rand_quote
+    # end
+
 
 
     # def all_toppings
@@ -95,3 +130,4 @@ class CupsController < ApplicationController
     # end
 
 end
+
