@@ -20,46 +20,53 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 
     
-    <a class="navbar-brand" href="#">
-    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
+    <a class="navbar-brand" href="">
+    <img src="https://lh3.googleusercontent.com/5Q9tK7Ah7cHfDlyLAo_uk0sz-h6owjobRXumgqI15TMLsdwirYV8BRuFeyIJbXwQeprY2y2ex_Bxca4Bd51rpBpyiMtz4q9D_zRa-umoDVyd4ww_UHZKyuI8gj_GjrntNj00Sa0SbU9aaRbQ1Pzm7ht9swlGx-6svCHvnbA1LFm-7fY8ILy9J3F1xVqcTegXp4gEMs2f4J6emc5IBpzXEfvhbv9iReY73DqHW8ckM0m43DAB9l2fF7Xt_32fdZ6kZF5RLQX7_7NyXV-AyvPmJpH8LMnplmq0JqmG-g_X0kbIqs4mJFt0Xs7JcpEen7erlnIGQDSqPKjpF2swzRfumGiAvFVIMpU2mpofm4GvDpj7IuklWsKyjaZ9DD9LzZx4Y0VvVYf0ncqkXhJDm44walRg5FesjrmzMCfFKKVVjdqmEhQ9mDcNfv8jpyQzhT4mK8bw7u_xtGxgw2o3C0BrAG0MwzM1-HI4HakM2kurdzNBU0u9Nc-JeaWq8Q71Ijz7qWdVifCVoS5L1J5pX93Ik59D-nbd1GTX8hcc6cScig8p78ASUExG0TQk1nH4KIi1tkKpUzPn72nTeDa0y72psUvPG77lq9noXVa6uVzi0mOofeNdcukOOEuEZWflISe7lCroZcf7eF4f2BY_puK4_kGZ_8YM7Kg=w750-h844-no" width="40" height="30" style = "padding-right: 10px" class="d-inline-block align-top" alt="">
+    BobaApp
   </a>
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" <%=link_to 'My Cups', cups_path%><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%=link_to 'Cups', cups_path%></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" >Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <a class="nav-link" <%=link_to 'Create A Cup', new_cup_path%></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" <%=link_to 'Create A Topping', new_topping_path%></a>
       </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <li class="nav-item">
+        <a class="nav-link" <%=link_to 'Sign Out', signout_path%></a>
+      </li>
+      </ul>
+  
+</nav>
+<%else%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <a class="navbar-brand" href="">
+    <img src="https://lh3.googleusercontent.com/5Q9tK7Ah7cHfDlyLAo_uk0sz-h6owjobRXumgqI15TMLsdwirYV8BRuFeyIJbXwQeprY2y2ex_Bxca4Bd51rpBpyiMtz4q9D_zRa-umoDVyd4ww_UHZKyuI8gj_GjrntNj00Sa0SbU9aaRbQ1Pzm7ht9swlGx-6svCHvnbA1LFm-7fY8ILy9J3F1xVqcTegXp4gEMs2f4J6emc5IBpzXEfvhbv9iReY73DqHW8ckM0m43DAB9l2fF7Xt_32fdZ6kZF5RLQX7_7NyXV-AyvPmJpH8LMnplmq0JqmG-g_X0kbIqs4mJFt0Xs7JcpEen7erlnIGQDSqPKjpF2swzRfumGiAvFVIMpU2mpofm4GvDpj7IuklWsKyjaZ9DD9LzZx4Y0VvVYf0ncqkXhJDm44walRg5FesjrmzMCfFKKVVjdqmEhQ9mDcNfv8jpyQzhT4mK8bw7u_xtGxgw2o3C0BrAG0MwzM1-HI4HakM2kurdzNBU0u9Nc-JeaWq8Q71Ijz7qWdVifCVoS5L1J5pX93Ik59D-nbd1GTX8hcc6cScig8p78ASUExG0TQk1nH4KIi1tkKpUzPn72nTeDa0y72psUvPG77lq9noXVa6uVzi0mOofeNdcukOOEuEZWflISe7lCroZcf7eF4f2BY_puK4_kGZ_8YM7Kg=w750-h844-no" width="40" height="30" style = "padding-right: 10px" class="d-inline-block align-top" alt="">
+    BobaApp
+  </a>
+  <span class="navbar-text" >
+      Made with love by Ellyn and Katana
+    </span>
   </div>
 </nav>
 
-
-<iframe src="https://open.spotify.com/embed/album/0S0KGZnfBGSIssfF54WSJh" width="800" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 <%end%>
 
   <body>
+  
     <%= yield %>
+    <footer>
+  <iframe id="foot" src="https://open.spotify.com/embed/album/0S0KGZnfBGSIssfF54WSJh" width="window.outerWidth" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </footer>
   </body>
+  
 </html>
