@@ -1,62 +1,28 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- * */
- *= require_tree .
- *= require_self
- *= require animate
-
- boba_dropping{
-
- body {
+body {
     font: 1em sans-serif;
     text-align: center;
 }
 .stage {
+    position: absolute;
     border-bottom: 2px solid #444;
     display: flex;
-    height: 110px;
-    width: 40%;
+    height: 620px;
+    width: 25%;
+    margin-left: 300px;
 }
-/* 
-
-.box {
-    align-self: flex-end;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 20px;
-    margin: 0 auto 0 auto;
-    transform-origin: top;
-    width: 20px;
-} */
-
 .image1 {
-/*      border-radius: 50%; */
-/*       align-self: flex-end; */
-/*       transform-origin: top; */
-     margin: 0px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #FF44336;
-    height: 70px;
-    margin: -4 auto 0 auto;
-    transform-origin: top;
-    width: 70px;
-}
-    img {
  border-radius: 50%;
   align-self: flex-end;
   transform-origin: top;
+  margin: 0px;
+    display: inline-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color:transparent;
+    height: 70px;
+    /* margin: -4 auto 10 auto; */
+    transform-origin: top;
+    width: 70px;
 }
 
 .bounce-7 {
@@ -79,33 +45,27 @@
     100% { transform: scale(1,1)      translateY(0); }
 }
 
-.image2 {
-/*      border-radius: 50%; */
-/*       align-self: flex-end; */
-/*       transform-origin: top; */
-     margin: 40px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #FF44336;
-    height: 80px;
-    margin:70 auto 0 auto;
-    transform-origin: top;
-    width: 80px;
-}
-    img {
+/* .image2 {
  border-radius: 50%;
   align-self: flex-end;
   transform-origin: top;
+  margin: 0px;
+    display: inline-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: #F44336;
+    height: 70px;
+    margin: -4 auto 0 auto;
+    transform-origin: top;
+    width: 70px;
 }
 
-.bounce-7 {
-    animation-name: bounce-7;
+#bounce-8 {
+    animation-name: bounce-8;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
+} */
 
-
-}
-@keyframes bounce-7 {
+/* @keyframes bounce-7 {
     0%   { transform: scale(1,1)   translateY(-100px); }
     10%  { transform: scale(1,1)   translateY(-90px); }
     20%  { transform: scale(1,1)   translateY(-80px); }
@@ -117,28 +77,59 @@
     57%  { transform: scale(.9,1.1)      translateY(-7px); }
     64%  { transform: scale(1.1,.9)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
-}
-.image3 {
-/*      border-radius: 50%; 
-  align-self: flex-end; 
-  transform-origin: top; */
-     margin: 50px;
+}  */
+
+/* .image3 {
+ border-radius: 50%;
+  align-self: flex-end;
+  transform-origin: top;
+  margin: 0px;
     display: inline-block;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     background-color: #F44336;
-    height: 80px;
-    margin: 0 auto 0 auto;
+    height: 70px;
+    margin: -4 auto 0 auto;
     transform-origin: top;
-    width: 80px;
+    width: 70px;
+} */
+
+
+/* .bounce-10 {
+    animation-name: bounce-10;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
+
+
 }
-    img {
+@keyframes bounce-7 {
+    0%   { transform: scale(1,1)   translateY(-100px); }
+    10%  { transform: scale(1,1)   translateY(-90px); }
+    20%  { transform: scale(1,1)   translateY(-80px); }
+    30%  { transform: scale(1,1)   translateY(-70px); }
+        40%  { transform: scale(1,1)   translateY(-60px); }
+    50%  { transform: scale(1,1)   translateY(-50px); }
+
+    50%  { transform: scale(1.05,.95) translateY(-10px); }
+    57%  { transform: scale(.9,1.1)      translateY(-7px); }
+    64%  { transform: scale(1.1,.9)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+} */
+/* .image4 {
  border-radius: 50%;
   align-self: flex-end;
   transform-origin: top;
-}
+  margin: 0px;
+    display: inline-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: #F44336;
+    height: 70px;
+    margin: -4 auto 0 auto;
+    transform-origin: top;
+    width: 70px;
+} */
 
-.bounce-7 {
+/* .bounce-7 {
     animation-name: bounce-7;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
 
@@ -149,55 +140,11 @@
     10%  { transform: scale(1,1)   translateY(-90px); }
     20%  { transform: scale(1,1)   translateY(-80px); }
     30%  { transform: scale(1,1)   translateY(-70px); }
-/*         40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-50px); } */
+        40%  { transform: scale(1,1)   translateY(-60px); }
+    50%  { transform: scale(1,1)   translateY(-50px); }
 
     50%  { transform: scale(1.05,.95) translateY(-10px); }
     57%  { transform: scale(.9,1.1)      translateY(-7px); }
     64%  { transform: scale(1.1,.9)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
-}
-.image4 {
-/*      border-radius: 50%; 
-  align-self: flex-end; 
-  transform-origin: top; */
-     margin: 50px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 80px;
-    margin: 0 auto 0 auto;
-    transform-origin: top;
-    width: 80px;
-}
-    img {
- border-radius: 50%;
-  align-self: flex-end;
-  transform-origin: top;
-}
-
-.bounce-7 {
-    animation-name: bounce-7;
-    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
-
-
-}
-@keyframes bounce-7 {
-    0%   { transform: scale(1,1)   translateY(-100px); }
-    10%  { transform: scale(1,1)   translateY(-90px); }
-    20%  { transform: scale(1,1)   translateY(-80px); }
-    30%  { transform: scale(1,1)   translateY(-70px); }
-/*         40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-50px); } */
-
-    50%  { transform: scale(1.05,.95) translateY(-10px); }
-    57%  { transform: scale(.9,1.1)      translateY(-7px); }
-    64%  { transform: scale(1.1,.9)      translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
-}
-
- }
- 
- 
- /* then, wrap view page in <div id= "name of class" from  */
+} */

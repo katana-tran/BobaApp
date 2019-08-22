@@ -49,7 +49,15 @@ class CupsController < ApplicationController
             counter += 1
         end
         Cup.last.toppings << temp
-        redirect_to cup_path(Cup.last)
+
+
+        #add functionality here to put bubbles
+        #in cup in three layers, then take
+        #a screenshot
+
+
+        # byebug
+        redirect_to cup_path(@cup)
 
     end
 
@@ -106,9 +114,8 @@ class CupsController < ApplicationController
         @cup= Cup.first
     end
 
-    # def rand_quote
-    #     Quote.rand_quote
-    # end
+
+
 
 
 
