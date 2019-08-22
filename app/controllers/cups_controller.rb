@@ -50,6 +50,8 @@ class CupsController < ApplicationController
             counter += 1
         end
         Cup.last.toppings << temp
+
+        
         redirect_to cup_path(Cup.last)
 
     end

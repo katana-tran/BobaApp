@@ -1,3 +1,34 @@
+
+
+<%= stylesheet_link_tag "boba-fall.css" %>
+<div class = "stage">
+<figure class = "image1"></figure>
+
+<%arr=[]%>
+<%@cup.toppings.each do |top|%>
+<%arr<< top.img_url%>
+<%end%>
+
+<div class = "image1 bounce-7">
+<img class= "image1"
+src= <%arr[0]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%arr[1]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%arr[2]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%arr[3]%> alt="sam jackson">
+</div>
+
+</div>
+
+<div align = "right">
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 
