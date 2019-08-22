@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
     def redirected_user
       if !signed_in?
+        flash[:error_message] = "You must log in to continue!"
         redirect_to signin_path
       end
     end

@@ -1,16 +1,20 @@
-<h1>Insert site title here</h1>
+<h1>Remaking Your BBT...</h1>
 
-<h4>Edit your bubbles</h4>
+<h4>Pick your bubbles!</h4>
 
-<%=form_for Cup.first do |f|%>
+<%=form_for @cup do |f|%>
+        <p><%=f.label 'Tea'%>
+        <%=f.collection_select :tea_id, Tea.all, :id, :name%></p>
 
-<% f.fields_for :topping_ids do |topping_name|%>
-<%=topping_name.label :topping_ids, Cup.first.toppings.name %>
+        <%=f.label 'Straw Color'%>
+        <%=f.collection_select :straw_id, Straw.all, :id, :color%>
 
-<%=topping_name.check_box :topping_ids, {}, true, false %>
+<p><%=f.label :name%>
+<%=f.text_field :name%></p>
 
-<%=f.submit 'Update toppings'%>
+
+<%=f.submit 'Edit Boba'%>
 
 
 <%end%>
-<%end%>
+

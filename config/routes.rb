@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :straws
   resources :cup_toppings
   resources :teas
-  resources :toppings
+  resources :toppings, except: [:edit, :delete]
   resources :cups
   resources :users
 

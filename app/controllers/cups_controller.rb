@@ -1,12 +1,17 @@
 class CupsController < ApplicationController
     # before_action :set_params, only: [:create, :update]
     # before_action :find_instance, only: :edit
+    before_action :redirected_user
     # before_action :all_toppings, only: [:index, :show]
 
     def index
-        @cups = Cup.all
-        # @cups = Cup.all
-        # byebug
+        if signed_in?
+            @cups = Cup.all.select do |cup|
+            cup.user_id == session[:user_id]
+            end
+        else
+            redirect_to signin_path
+        end
     end
     
     def new
@@ -17,8 +22,8 @@ class CupsController < ApplicationController
         params[:cup][:topping_ids] = params[:topping_ids].map do |topping|
             topping.to_i
         end
+        params[:cup][:user_id] = session[:user_id]
         @cup = Cup.new(set_params)
-        byebug
         @cup.save
         # @amount = set_params(:amount)
         # byebug
@@ -27,18 +32,36 @@ class CupsController < ApplicationController
 
     def show
         @cup = Cup.find(params[:id])
-        @toppings = @cup.toppings
+        if @cup.user_id == session[:user_id]
+            @toppings = @cup.toppings
+        else 
+            flash[:error_message] = "You do not have view access to that cup."
+            redirect_to cups_path
+        end
     end
 
     def edit
+        @cup = Cup.find(params[:id])
+        if @cup.user_id != session[:user_id]
+            flash[:error_message] = "You do not have edit access to that cup."
+            redirect_to cups_path
+        end
     end
     
     def update
-        @cup=Cup.find_by(params[:id])
+        @cup = Cup.find_by(params[:id])
         @cup.update(set_params)
         redirect_to cup_path(@cup)
     end
 
+    def destroy
+        @cup = Cup.find(params[:id])
+        if @cup.user_id != session[:user_id]
+            flash[:error_message] = "You do not have edit access to that cup."
+        else
+            @cup.delete
+        redirect_to cups_path
+    end
 
     private
 

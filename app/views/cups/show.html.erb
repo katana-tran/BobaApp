@@ -5,3 +5,10 @@
     <%=topping.name%><br>
     <img src = <%=topping.img_url%> width="150" height="150"></br>
     <%end%>
+
+
+<p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
+
+<p><%= button_to 'Delete Cup', cup_path(@cup), method: :delete%></p>
+
+<p><%= button_to 'Back to All My Cups', cups_path, method: :get%></p>

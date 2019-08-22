@@ -1,3 +1,4 @@
+<%= flash[:error_message] %>
 <h1>List of bubble CUPs names</h1>
 
 <%@cups.each do |cup|%>
@@ -7,6 +8,6 @@
 
 <p><%= link_to 'Create New Tea', new_cup_path %></p>
 
-<p><%= link_to 'Sign Out', signout_path%></p>
+<p><%= link_to 'Sign Out', signout_path, method: :delete%></p>
 
 
