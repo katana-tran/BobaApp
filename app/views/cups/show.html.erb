@@ -4,26 +4,26 @@
 <div class = "stage">
 <figure class = "image1"></figure>
 
-<%arr=[]%>
+<%pic_arr=[]%>
 <%@cup.toppings.each do |top|%>
-<%arr<< top.img_url%>
+<%pic_arr<< top.img_url%>
 <%end%>
 
 <div class = "image1 bounce-7">
 <img class= "image1"
-src= <%arr[0]%> alt="sam jackson">
+src= <%=pic_arr[0]%> alt="sam jackson">
 </div>
 <div class = "image1 bounce-7">
 <img class= "image1"
-src=<%arr[1]%> alt="sam jackson">
+src=<%=pic_arr[1]%> alt="sam jackson">
 </div>
 <div class = "image1 bounce-7">
 <img class= "image1"
-src=<%arr[2]%> alt="sam jackson">
+src=<%=pic_arr[2]%> alt="sam jackson">
 </div>
 <div class = "image1 bounce-7">
 <img class= "image1"
-src=<%arr[3]%> alt="sam jackson">
+src=<%=pic_arr[3]%> alt="sam jackson">
 </div>
 
 </div>

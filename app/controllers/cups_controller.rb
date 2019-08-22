@@ -51,8 +51,14 @@ class CupsController < ApplicationController
         end
         Cup.last.toppings << temp
 
-        
-        redirect_to cup_path(Cup.last)
+
+        #add functionality here to put bubbles
+        #in cup in three layers, then take
+        #a screenshot
+
+
+        # byebug
+        redirect_to cup_path(@cup)
 
     end
 

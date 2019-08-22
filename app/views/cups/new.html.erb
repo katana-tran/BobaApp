@@ -29,6 +29,8 @@
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
 <%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
 
+<%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
+<%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
 <%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
