@@ -24,22 +24,21 @@ class CupsController < ApplicationController
         end
         params[:cup][:topping_ids] = cup.reverse
         params[:cup][:user_id] = session[:user_id]
+        if params[:cup][:name].blank?
+            params[:cup][:name] = "Unnamed Cup"
+        end
         @cup = Cup.new(set_params)
+
         #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
     
         @cup.save
         #we are geting the amount of toppings instances just put into the cup
         length = params[:cup][:topping_ids].length
 
-
-        # XY = x
-        #for amount of topping instances that are put in, we need to multiple by the amount that was given to us
-
         total_toppings = params[:amount].map do |topping|
             topping.to_i
         end
         counter = 0
-        # binding.pry
         temp = []
         while counter < length
             instance = Topping.all.find(Cup.last.topping_ids[total_toppings.length - counter - 1])
@@ -49,6 +48,7 @@ class CupsController < ApplicationController
             end
             counter += 1
         end
+        byebug
         Cup.last.toppings << temp
         redirect_to cup_path(Cup.last)
 
