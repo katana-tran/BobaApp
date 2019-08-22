@@ -48,7 +48,7 @@ class CupsController < ApplicationController
                 #instance of topping
             end
             counter += 1
-            byebug
+            # byebug
         end
         Cup.last.toppings << temp
         redirect_to cup_path(Cup.last)
@@ -56,7 +56,7 @@ class CupsController < ApplicationController
     end
 
     def show
-        byebug
+        # byebug
         @cup = Cup.find(params[:id])
         if @cup.user_id == session[:user_id]
             @toppings = @cup.toppings
@@ -109,9 +109,8 @@ class CupsController < ApplicationController
         @cup= Cup.first
     end
 
-    # def rand_quote
-    #     Quote.rand_quote
-    # end
+
+
 
 
 

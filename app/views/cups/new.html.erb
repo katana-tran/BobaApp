@@ -1,18 +1,33 @@
+
+<div class = "stage">
+<div class = "image1">
+<img class= "image1"
+src="https://i.imgflip.com/2nuc.jpg" alt="">
+<div class = "bounce-7">
+
+
+
+
+<div align = "right">
 <h1>Making Your BBT...</h1>
 
 <h4>Pick your bubbles!</h4>
 
 <%=form_for @cup do |f|%>
-
-        <%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
-        
-        <%=f.collection_select :tea_id, Tea.all, :id, :name%>
-        
-        <%=f.collection_select :straw_id, Straw.all, :id, :color%>
-
-<p><%=f.label :name%>
+<%# <p><%=f.size :name%>
+<p><%=f.label "Name your bubble tea!"%>
 <%=f.text_field :name%></p>
+        <%# <%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
+        <p><%=f.label "tea type"%>
 
+        <%=f.collection_select :tea_id, Tea.all, :id, :name%><br>
+        <p><%=f.label "straw Color"%>
+
+        <%=f.collection_select :straw_id, Straw.all, :id, :color%><br>
+
+
+
+<%=f.label 'Bubble'%><br>
 <%=f.label 'Amount'%><br>
 
 
@@ -20,17 +35,21 @@
 <%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 
-<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
-<%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
-
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
 <%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
 <%= f.select :amount, options_for_select(['1', '2', '3', '4', '5', '6']), {multiple: true }, {:name => 'amount[]'}%><br>
-
+<br>
 <%=f.submit 'Create Boba'%>
-
+<br>
+<br>
+<br>
+<%=Quote.rand_quote.quote%><br>
+<%="- #{Quote.rand_quote.author}"%>
 
 <%end%>
+
+</div>
+
