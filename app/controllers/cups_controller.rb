@@ -14,15 +14,54 @@ class CupsController < ApplicationController
     end
 
     def create
-        params[:cup][:topping_ids] = params[:topping_ids].map do |topping|
+        cup = params[:topping_ids].map do |topping|
             topping.to_i
         end
+        params[:cup][:topping_ids] = cup.reverse
+        
+
         @cup = Cup.new(set_params)
-        byebug
+       
         @cup.save
-        # @amount = set_params(:amount)
-        # byebug
+
+
+        #we are geting the amount of toppings instances just put into the cup
+        length = params[:cup][:topping_ids].length
+        x = length
+        # XY = x
+        #for amount of topping instances that are put in, we need to multiple by the amount that was given to us
+        amount = params[:amount] 
+        counter = 0
+        y = 0
+        # binding.pry
+        while counter <= length
+        a = amount[y].to_i
+        temp = []
+        (a-1).times do
+            # byebug
+            instance = Topping.all.find(Cup.last.topping_ids[x-1])
+            
+            temp << instance
+            #instance of topping
+                
+        end
+        x +=1
+        y += 1
+        counter += 1
+
+        final= Cup.last.toppings << temp
+        end
         redirect_to cup_path(@cup)
+
+        # x = params[:cup][:topping_ids].length
+        # x.times do
+        #     CupTopping.all[-x].amount = Cup.last.topping_ids[-x]
+        #     x = x-1
+
+          
+        # end
+        # byebug
+
     end
 
     def show
@@ -51,14 +90,17 @@ class CupsController < ApplicationController
     #     @tea_url= find_instance.name
     # end
 
+    #for purposes of associating amount to topping
+
+
 
     def find_instance
         @cup= Cup.first
     end
 
-    def rand_quote
-        Quote.rand_quote
-    end
+    # def rand_quote
+    #     Quote.rand_quote
+    # end
 
 
 
@@ -77,3 +119,9 @@ class CupsController < ApplicationController
     # end
 
 end
+
+
+# def example
+#     thing = Thing.create(some crap)
+
+#     thing.id

@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_185215) do
+ActiveRecord::Schema.define(version: 2019_08_21_222542) do
 
   create_table "cup_toppings", force: :cascade do |t|
     t.integer "cup_id"
     t.integer "topping_id"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_185215) do
     t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount"
   end
 
   create_table "quotes", force: :cascade do |t|
