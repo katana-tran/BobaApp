@@ -48,7 +48,6 @@ class CupsController < ApplicationController
                 #instance of topping
             end
             counter += 1
-            byebug
         end
         Cup.last.toppings << temp
         redirect_to cup_path(Cup.last)
@@ -56,7 +55,6 @@ class CupsController < ApplicationController
     end
 
     def show
-        byebug
         @cup = Cup.find(params[:id])
         if @cup.user_id == session[:user_id]
             @toppings = @cup.toppings
