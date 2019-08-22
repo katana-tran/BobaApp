@@ -48,7 +48,6 @@ class CupsController < ApplicationController
             end
             counter += 1
         end
-        byebug
         Cup.last.toppings << temp
         redirect_to cup_path(Cup.last)
 

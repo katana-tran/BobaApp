@@ -3,12 +3,11 @@
 <%= form_for :login do |f|%>
     <p><%= f.label :username%>
     <%= f.text_field :username%></p>
-    <%= f.label :password%>
-    <%= f.password_field :password%><br>
-    <input class="btn btn-outline-secondary" type="submit" value="LOG IN">
+    <p><%= f.label :password%>
+    <%= f.password_field :password%></p>
+    <input class="btn btn-outline-secondary" type="submit" value="LOG IN"><br>
 
     <p>New user? <%= link_to 'Sign Up Here', signup_path %></p>
     
     <%end%>
 
-    
