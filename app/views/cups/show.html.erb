@@ -9,92 +9,81 @@
 
 <%if i<5%>
 <%@cup.toppings.each do |top|%>
-<%# <figure class = "image1"></figure> %>
+<figure class = "image1"></figure>
 <div class = "image1 bounce-7">
 <img class= "image1"
  src= "<%=top.img_url%>"
  alt="sam jackson">
  </div>
 <%end%>
+</div>
 
 <div class = "stage2">
 
 <%elsif i>4 && i<=9%>
-<%x=0%>
-<%4.times do%>
-<%# <figure class = "image1"></figure> %>
-<div class = "image1 bounce-7">
-<img class= "image1" src=" <%=@cup.toppings[x].img_url%>"
- alt="sam jackson">
- <%x+=1%>
- </div>
-<%end%>
-<%temp.delete(keys.min)%>
-<%temp.delete(min)%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
-<%#temp.shift(4)%>
 <%temp.each do |top|%>
-<%# <figure class = "image1"></figure> %>
+<figure class = "image1"></figure>
 <div class = "image1 bounce-7">
 <img class= "image1"
  src= "<%=top.img_url%>"
  alt="sam jackson">
  </div>
 <%end%>
+<%x=5%>
+<%4.times do%>
+<figure class = "image1"></figure>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=@cup.toppings[x].img_url%>"
+ alt="sam jackson">
+ </div>
+<%end%>
+</div>
+
+
 
 
 <div class = "stage3">
 
 <%else%>
-<%x=0%>
-<%4.times do%>
-<%# <figure class = "image1"></figure> %>
-<div class = "image1 bounce-7">
-<img class= "image1" src=" <%=temp[x].img_url%>"
- alt="sam jackson">
- <%x+=1%>
- </div>
-<%end%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
-<%#temp.shift(4)%>
-<%x=0%>
-<%5.times do%>
-<%# <figure class = "image1"></figure> %>
-<div class = "image1 bounce-7">
-<img class= "image1" src=" <%=temp[x].img_url%>"
- alt="sam jackson">
- <%x+=1%>
- </div>
-<%end%>
-<%temp.delete(min)%>
-<%temp.delete(min)%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
-<%temp.delete(hash.keys.min)%>
 <%#temp.shift(5)%>
 <%temp.each do |top|%>
-<%# <figure class = "image1"></figure> %>
+<figure class = "image1"></figure>
 <div class = "image1 bounce-7">
 <img class= "image1"
  src= "<%=top.img_url%>"
  alt="sam jackson">
  </div>
 <%end%>
+
+<%y=5%>
+<%4.times do%>
+<figure class = "image1"></figure>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=temp[y].img_url%>"
+ alt="sam jackson">
+ <%y+=1%>
+ </div>
+<%end%>
+
+<%z=10%>
+<%5.times do%>
+<figure class = "image1"></figure>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=temp[z].img_url%>"
+ alt="sam jackson">
+ <%z+=1%>
+ </div>
+<%end%>
+</div>
+
+
 <%end%>
 
 
 
-<<<<<<< HEAD
-<div align= "right">
-=======
 
 
 
->>>>>>> 1d1104499ab8de222120bc32ddfbf597096de5c6
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 </div>
@@ -128,8 +117,5 @@
 <br>
 <br>
 <br>
-<<<<<<< HEAD
 <%quote= Quote.rand_quote%><br>
 <%="#{quote.quote} -#{quote.author}"%>
-=======
->>>>>>> 1d1104499ab8de222120bc32ddfbf597096de5c6
