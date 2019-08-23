@@ -1,3 +1,51 @@
-<h1>Show page cup_path(@cup)</h1>
 
-<h2><%=@all_names%></h2>
+
+<%= stylesheet_link_tag "boba-fall.css" %>
+<div class = "stage">
+<figure class = "image1"></figure>
+
+<%pic_arr=[]%>
+<%@cup.toppings.each do |top|%>
+<%pic_arr<< top.img_url%>
+<%end%>
+
+<div class = "image1 bounce-7">
+<img class= "image1"
+src= <%=pic_arr[0]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%=pic_arr[1]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%=pic_arr[2]%> alt="sam jackson">
+</div>
+<div class = "image1 bounce-7">
+<img class= "image1"
+src=<%=pic_arr[3]%> alt="sam jackson">
+</div>
+
+</div>
+
+<div align = "right">
+<h1><%=@cup.name%></h1>
+<h3>Current Toppings in your Cup</h3>
+
+<%@toppings.each do |topping|%>
+    <%=topping.name%><br>
+    <img src = <%=topping.img_url%> width="150" height="150"></br>
+    <%end%>
+
+
+<p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
+
+<p><%= button_to 'Delete Cup', cup_path(@cup), method: :delete%></p>
+
+<p><%= button_to 'Back to All My Cups', cups_path, method: :get%></p>
+
+<br>
+<br>
+<br>
+<%=Quote.rand_quote.quote%><br>
+<%="- #{Quote.rand_quote.author}"%>

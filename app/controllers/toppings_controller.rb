@@ -1,5 +1,6 @@
 class ToppingsController < ApplicationController
-    before_action :get_topping, only: [:show, :edit, :update, :delete]
+    before_action :get_topping, only: [:show, :update, :delete]
+   
     def index
         @toppings = Topping.all
     end
@@ -13,16 +14,12 @@ class ToppingsController < ApplicationController
 
     def create
         @topping = Topping.new(topping_params)
-        @topping.save
-    end
-
-    def edit
-    end
-
-    def update
-    end
-
-    def delete
+        if @topping.save
+            redirect_to topping_path(@topping)
+        else
+            flash[:error_message] = "NEED LEGIT PIC .jpg .jpeg .png"
+            redirect_to toppings_path
+        end
     end
 
     private

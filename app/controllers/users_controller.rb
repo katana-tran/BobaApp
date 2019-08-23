@@ -16,7 +16,7 @@ class UsersController < ApplicationController
             redirect_to cups_path
         else 
             redirect_to signup_path
-            flash[:error_message] = "USERNAME TAKEN"
+            flash[:error_message] = "The user "
         end
     end
 

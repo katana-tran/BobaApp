@@ -1,0 +1,10 @@
+<%= flash[:error_message]%>
+<p> Make your toppin'!</p>
+
+<%=form_for @topping do |t|%>
+    <%= t.label :name %>
+    <%= t.text_field :name%>
+    <%= t.label :img_url %>
+    <%= t.text_field :img_url%>
+    <%= t.submit%>
+<%end%>
