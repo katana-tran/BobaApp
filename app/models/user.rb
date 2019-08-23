@@ -12,11 +12,8 @@ class User < ApplicationRecord
                 length = user.cups.length
             end
         end
-        return "User #{most_cups} has created #{length} cups."
+        most_cups
     end
 
-    def self.most_recent_user
-        "The most recent user is #{User.last.username}."
-    end
 
 end

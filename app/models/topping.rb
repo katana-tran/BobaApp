@@ -2,8 +2,8 @@ class Topping < ApplicationRecord
     has_many :cup_toppings
     has_many :cups, through: :cup_toppings
     validates :name, {presence: true, uniqueness: true}
-    validates :img_url, {presence: true, uniqueness: true}
-    validate :is_it_proper_pic
+    # validates :img_url, {presence: true, uniqueness: true}
+    # validate :is_it_proper_pic
     # validates_format_of :img_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "whatever"
 
     def is_it_proper_pic
@@ -21,7 +21,7 @@ class Topping < ApplicationRecord
                 most_used = topping.name
             end
         end
-        return "The most used topping is #{most_used} which has been used #{amount_times_used}."
+        return most_used
     end
 
     

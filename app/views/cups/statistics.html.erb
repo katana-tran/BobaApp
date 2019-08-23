@@ -1,19 +1,22 @@
-<br>
 <div align=center>
+<br>
+
 <h1> SITE STATS </h1>
-<p>Most Cups Made: <%=@most_cups%></p>
+<br>
+<p>Most Cups Made: The user with the most cups is <font color="burlywood"><%=@most_cups.username%></font>, with <font color="burlywood"><%=@most_cups.cups.length%></font> cups!</p>
 
-<p>Most Recent User: <%=@most_recent%></p>
+<p>Most Recent User: The most recently made user is <font color="burlywood"><%=@most_recent%></font>.</p>
 
-<p>Most Used Tea: <%=@most_used_teas%></p>
+<p>Most Used Topping: The most used topping is <font color="burlywood"><%=@most_used_topping.name%></font> which has been used <font color="burlywood"><%=@most_used_topping.cups.length%></font> times.</p>
 
-<p>Most Used Topping: <%=@most_used%></p>
+<p>Most Used Tea: <font color="burlywood"><%=@tea.name%></font> has been used <font color="burlywood"><%=@tea.cups.length%></font> times.</p>
 <details class = "details">
-  <summary>This Tea Facts: <%=@tea.name%></summary>
-  <p> <%= @tea.description%></p>
+  <summary> Facts about <%=@tea.name%></summary>
+  <p><%= @tea.description%></p>
   <p><%= @tea.origin%></p>
   <p><%= @tea.benefits%></p>
 </details>
+
 
 
 

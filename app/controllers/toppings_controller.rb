@@ -17,7 +17,11 @@ class ToppingsController < ApplicationController
         if @topping.save
             redirect_to topping_path(@topping)
         else
-            flash[:error_message] = "NEED LEGIT PIC .jpg .jpeg .png"
+            if Topping.find_by(img_url:@topping.img_url)
+            flash[:error_message] = "You used a url that has been uploaded before."
+            else
+            flash[:error_message] = "Use a legit pic: .jpg .jpeg .png"
+            end
             redirect_to toppings_path
         end
     end

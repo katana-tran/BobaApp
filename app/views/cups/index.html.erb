@@ -1,7 +1,9 @@
+
 <%= flash[:error_message] %>
+<div style="border-top:2px solid silver">
+<br>
 <h1>list of cup names</h1>
-<%# <h3><%= link_to 'Back to create', create_tea_path%>
-<%# </h3> %>
+
 
 
 <ul style="list-style-type:circle;">
@@ -10,10 +12,19 @@
     <%= cup.name%> </li>
     <%end%></ul>
 
-<p><%= link_to 'Create New Tea', new_cup_path %></p>
+<p><%= link_to 'Create New Tea', new_cup_path, class: 'link-to-text-color' %></p>
+</div>
+
 <br>
 <br>
 <br>
+<br>
+<br>
+
+<br>
+<br>
+
+
 
 
 
