@@ -30,7 +30,7 @@ class CupsController < ApplicationController
         @cup = Cup.new(set_params)
 
         #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
-    byebug
+    # byebug
         @cup.save
         # byebug
         #we are geting the amount of toppings instances just put into the cup
@@ -42,14 +42,14 @@ class CupsController < ApplicationController
         counter = 0
         temp = []
         while counter < length
-            instance = Topping.all.find(Cup.last.topping_ids[total_toppings.length - counter - 1])
+            instance = Topping.all.find(@cup.topping_ids[total_toppings.length - counter - 1])
             (total_toppings[counter] - 1).times do
                 temp << instance
                 #instance of topping
             end
             counter += 1
         end
-        Cup.last.toppings << temp
+        @cup.toppings << temp
 
 
         #add functionality here to put bubbles
