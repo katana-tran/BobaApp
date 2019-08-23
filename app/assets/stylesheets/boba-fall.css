@@ -1,203 +1,108 @@
-body {
+/* body {
     font: 1em sans-serif;
     text-align: center;
 
-}
+} */
 .bottomleft {
     position: absolute;
     bottom: 8px;
     left: 50px;
     font-size: 18px;
-  }
+}
  .stage1 {
     position: absolute;
-    border-bottom: 2px solid #444;
     display: flex;
-    height: 100;
-    /* height: 490px; */
-    width: 25%;
-    margin-left: 300px;
+    height: 100px;
+    width: 10%;
+    /* margin-left: 300px; */
+    bottom: 200px;
+    left: 1130px;
  }
- 
 
+ details {
+   max-width: 50%;
+ }
+
+ details > p {
+   padding-left: 10px;
+  max-width: 50%;
+ }
 
 .stage2 {
     position: absolute;
-    border-bottom: 2px solid #444;
     display: flex;
-    /* height: 490px; */
-    width: 25%;
-    top: 80px;
-    right: 0;
-    margin-left: 300px;
-    background-color: aqua
+    height: 100px;
+    width: 10%;
+    /* margin-left: 300px; */
+    bottom: 300px;
+    left:1170px;
 }
+/* .stage3 {
+  position: absolute;
+  display: flex;
+  height: 100px;
+  width: 10%;
+  bottom: 400px;
+  left: 400px;
+} */
 
 .image1 {
  border-radius: 50%;
   align-self: flex-end;
   transform-origin: top;
   margin: 0px;
-    display: inline-block;
-    /* animation-duration: 2s;
-    animation-iteration-count: infinite; */
+  display: inline-block;
+  animation-duration: 1.5s;
+    animation-iteration-count: infinite;
     background-color:transparent;
-    height: 50px;
+    height: 100px;
     /* margin: -4 auto 10 auto; */
     transform-origin: top;
-    width: 50px;
+    width: 100px;
 }
 
-/* .bounce-7 {
+ .bounce-7 {
     animation-name: bounce-7;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
 
 
-} */
-/* @keyframes bounce-7 {
-    0%   { transform: scale(1,1)      translateY(-100px); }
-    10%  { transform: scale(1,1)   translateY(-75px); }
-    20%  { transform: scale(1,1)   translateY(-70px); }
-    30%  { transform: scale(1,1)   translateY(-65px); }
-    40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-30px); }
+} 
+ @keyframes bounce-7 {
+    0%   { transform: scale(1,1)  translateY(-300px); }
+    10%  { transform: scale(1,1)  translateY(-250px); }
+    20%  { transform: scale(1,1)  translateY(-200px); }
+    30%  { transform: scale(1,1)  translateY(-150px); }
+    40%  { transform: scale(1,1)  translateY(-100px); }
 
-    50%  { transform: scale(1.05,.95) translateY(-10px); }
-    57%  { transform: scale(.9,1.1)      translateY(-7px); }
-    64%  { transform: scale(1.1,.9)      translateY(0); }
+    50%  { transform: scale(1.05,.95) translateY(-20px); }
+    57%  { transform: scale(.9,1.1)      translateY(-50px); }
+    64%  { transform: scale(1.1,.9)      translateY(-10); }
     100% { transform: scale(1,1)      translateY(0); }
-} */
-
-/* .image2 {
- border-radius: 50%;
-  align-self: flex-end;
-  transform-origin: top;
-  margin: 0px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 70px;
-    margin: -4 auto 0 auto;
-    transform-origin: top;
-    width: 70px;
-} */
+} 
 
 
-/* @keyframes bounce-7 {
-    0%   { transform: scale(1,1)   translateY(-100px); }
-    10%  { transform: scale(1,1)   translateY(-90px); }
-    20%  { transform: scale(1,1)   translateY(-80px); }
-    30%  { transform: scale(1,1)   translateY(-70px); }
-    40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-50px); }
-
-    50%  { transform: scale(1.05,.95) translateY(-10px); }
-    57%  { transform: scale(.9,1.1)      translateY(-7px); }
-    64%  { transform: scale(1.1,.9)      translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
-}  */
-
-/* .image3 {
- border-radius: 50%;
-  align-self: flex-end;
-  transform-origin: top;
-  margin: 0px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 70px;
-    margin: -4 auto 0 auto;
-    transform-origin: top;
-    width: 70px;
-} */
-
-
-/* .bounce-10 {
-    animation-name: bounce-10;
-    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
-
-
-}
-@keyframes bounce-7 {
-    0%   { transform: scale(1,1)   translateY(-100px); }
-    10%  { transform: scale(1,1)   translateY(-90px); }
-    20%  { transform: scale(1,1)   translateY(-80px); }
-    30%  { transform: scale(1,1)   translateY(-70px); }
-        40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-50px); }
-
-    50%  { transform: scale(1.05,.95) translateY(-10px); }
-    57%  { transform: scale(.9,1.1)      translateY(-7px); }
-    64%  { transform: scale(1.1,.9)      translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
-} */
-/* .image4 {
- border-radius: 50%;
-  align-self: flex-end;
-  transform-origin: top;
-  margin: 0px;
-    display: inline-block;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 70px;
-    margin: -4 auto 0 auto;
-    transform-origin: top;
-    width: 70px;
-} */
-
-/* .bounce-7 {
-    animation-name: bounce-7;
-    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1)
-
-
-}
-@keyframes bounce-7 {
-    0%   { transform: scale(1,1)   translateY(-100px); }
-    10%  { transform: scale(1,1)   translateY(-90px); }
-    20%  { transform: scale(1,1)   translateY(-80px); }
-    30%  { transform: scale(1,1)   translateY(-70px); }
-        40%  { transform: scale(1,1)   translateY(-60px); }
-    50%  { transform: scale(1,1)   translateY(-50px); }
-
-    50%  { transform: scale(1.05,.95) translateY(-10px); }
-    57%  { transform: scale(.9,1.1)      translateY(-7px); }
-    64%  { transform: scale(1.1,.9)      translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
-} */
-
-
-
-
-
-.tea-fill tea {
-  height: 100px;
-  width: 100px;
-}
-
-/* .tea {
+/* 
+.tea {
   fill: rgb(102, 84, 207);
-  width: 51px;
-  animation: tea-fill 1.25s steps(25, end) 0s infinite;
-} */
+  width: 200px;
+  animation: tea-fill 1.25s 0s infinite;
+}
 
-/* @keyframes tea-fill {
+ @keyframes tea-fill {
   0% {
-    height: 200px;
+    bottom: 200px;
   }
   25% {
-    height: 150px;
+    bottom: 250px;
   }
   50% {
-    height: 100px;
+    bottom: 300px;
   }
   75% {
-    height: 50px;
+    bottom: 350x;
   }
   
   100% {
-    height: 0px;
+    bottom: 400px;
   }
 } */

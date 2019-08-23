@@ -1,15 +1,13 @@
 
-<%= stylesheet_link_tag "tea-fill.css" %>
+<%#= stylesheet_link_tag "tea-fill.css" %>
 <%= stylesheet_link_tag "boba-fall.css" %>
 
-<svg xmlns="http://www.w3.org/2000/svg" 
-</div class="tea-fill tea" viewBox="0 0 128 128">
-  <g>
-<div class="tea" height="100" transform="translate(20,0)" y="15">
+<div>
+<img src="https://cdn1.imggmi.com/uploads/2019/8/23/9e2695b1f468b6218d937a7ab11da575-full.jpg"style="width:750px;height:990px;left:900px;bottom:160px; position:absolute;">
 
 </div>
-</div>
-<%= stylesheet_link_tag "boba-fall.css" %>
+
+
 
 
 <%i=@cup.toppings.length%>
@@ -17,50 +15,62 @@
 
 <div class = "stage1">
 
-  <%if i<5%>
+  <%if i<4%>
     <%@cup.toppings.each do |top|%>
       <figure class = "image1"></figure>
       <div class = "image1 bounce-7">
-        <img class= "image1"
+        <img class= "image1">
         src= "<%=top.img_url%>"
         alt="sam jackson">
       </div>
     <%end%>
-
-
-
   <%else%>
     <%x=0%>
-    <%4.times do%>
+        <figure class = "image1"></figure>
+        <div class = "image1 bounce-7">
+        <img class= "image1" src=" <%=@cup.toppings[x].img_url%>" alt="sam jackson">
+        </div>
       <figure class = "image1"></figure>
       <div class = "image1 bounce-7">
-      <img class= "image1" src=" <%=@cup.toppings[x].img_url%>" alt="sam jackson">
+      <img class= "image1" src=" <%=@cup.toppings[x+1].img_url%>" alt="sam jackson">
       </div>
-    <%end%>
-  <%end%>
+      <figure class = "image1"></figure>
+      <div class = "image1 bounce-7">
+      <img class= "image1" src=" <%=@cup.toppings[x+2].img_url%>" alt="sam jackson">
+      </div>
 </div>
 
 <div class= "stage2">
-  <%x=5%>
-  <%5.times do%>
-    <figure class = "image1"></figure>
-    <div class = "image1 bounce-7">
-    <img class= "image1" src=" <%=@cup.toppings[x].img_url%>"
-    alt="sam jackson">
+      <%x=3%>
+      <figure class = "image1"></figure>
+      <div class = "image1 bounce-7">
+        <img class= "image1" src=" <%=@cup.toppings[x].img_url%>" alt="sam jackson">
+      </div>
+      <figure class = "image1"></figure>
+      <div class = "image1 bounce-7">
+        <img class= "image1" src=" <%=@cup.toppings[x+1].img_url%>" alt="sam jackson">
+      </div>
+      <figure class = "image1"></figure>
+      <div class = "image1 bounce-7">
+        <img class= "image1" src=" <%=@cup.toppings[x+2].img_url%>" alt="sam jackson">
+      </div>
 
-  <%end%>
+  </div>
 
+<%end%>
+
+
+   <div align = "left"> 
+<details class = "details">
+  <summary>Your Tea Facts: <%=@tea.name%></summary>
+  <p> <%= @tea.description%></p>
+  <p><%= @tea.origin%></p>
+  <p><%= @tea.benefits%></p>
+  </details>
 </div>
 
 
-
-
-
-
-
-
-
-<div align = "right", style="padding-right:30">
+<div align = "right" padding: 0px 30px>
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 
@@ -69,24 +79,19 @@
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
     <div class = "memepics">
-        <img src = <%=topping.img_url%> width="150" height="150"></br>
+        <img src = <%=topping.img_url%> width="150" height="160"><br><br>
     </div>
-    <%end%>
+<%end%>
 
-
-
-<div align= "right">
-<details class = "details">
-  <summary>Your Tea Facts: <%=@tea.name%></summary>
-  <p> <%= @tea.description%></p>
-  <p><%= @tea.origin%></p>
-  <p><%= @tea.benefits%></p>
-</details>
 </div>
+
+
+
 
 <p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
 
 <p><%= button_to 'Delete Cup', cup_path(@cup), method: :delete%></p>
+
 
 
 
