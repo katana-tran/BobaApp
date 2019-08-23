@@ -9,10 +9,8 @@
 <%pic_arr<< top.img_url%>
 <%end%>
 
-<div class = "image1 bounce-7">
-<img class= "image1"
-src= <%=pic_arr[0]%> alt="sam jackson">
-</div>
+
+
 <div class = "image1 bounce-7">
 <img class= "image1"
 src=<%=pic_arr[1]%> alt="sam jackson">
@@ -28,15 +26,26 @@ src=<%=pic_arr[3]%> alt="sam jackson">
 
 </div>
 
-<div align = "right">
+
+
+
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
-    <img src = <%=topping.img_url%> width="150" height="150"></br>
+    <div class = "memepics">
+        <img src = <%=topping.img_url%> width="150" height="150"></br>
+    </div>
     <%end%>
 
+
+<details class = "details">
+  <summary>Your Tea Facts: <%=@tea.name%></summary>
+  <p> <%= @tea.description%></p>
+  <p><%= @tea.origin%></p>
+  <p><%= @tea.benefits%></p>
+</details>
 
 <p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
 
@@ -44,8 +53,8 @@ src=<%=pic_arr[3]%> alt="sam jackson">
 
 <p><%= button_to 'Back to All My Cups', cups_path, method: :get%></p>
 
+
+
 <br>
 <br>
 <br>
-<%=Quote.rand_quote.quote%><br>
-<%="- #{Quote.rand_quote.author}"%>

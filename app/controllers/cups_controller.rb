@@ -63,6 +63,7 @@ class CupsController < ApplicationController
 
     def show
         @cup = Cup.find(params[:id])
+        @tea = Tea.find(@cup.tea_id)
         if @cup.user_id == session[:user_id]
             @toppings = @cup.toppings
         else 

@@ -1,13 +1,23 @@
-<h1>LOGIN PAGE!</h1>
-<%= flash[:error_message] %>
-<%= form_for :login do |f|%>
-    <p><%= f.label :username%>
-    <%= f.text_field :username%></p>
-    <p><%= f.label :password%>
-    <%= f.password_field :password%></p>
-    <input class="btn btn-outline-secondary" type="submit" value="LOG IN"><br>
 
+<p><h1>LOGIN PAGE!</h1></p>
+
+<%= flash[:error_message] %>
+<div class="form-group">
+<%= form_for :login do |f|%>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <p><%= f.label :username%>
+    <%= f.text_field :username, :placeholder => "enter username", :id => "ip2"%></p>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <p><%= f.label :password%>
+    <%= f.password_field :password, :placeholder => "enter password", :id => "ip2"%></p>
+    <input class="btn btn-outline-secondary" type="submit" value="LOG IN"><br>
+</div>
     <p>New user? <%= link_to 'Sign Up Here', signup_path %></p>
     
     <%end%>
+
+<details>
+  <summary>Copyright 2019.</summary>
+  <p>- Created by Ellyn Anderson and Katana Tran. All Rights Reserved. </p>
+</details>
 
