@@ -30,8 +30,9 @@ class CupsController < ApplicationController
         @cup = Cup.new(set_params)
 
         #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
-    
+    # byebug
         @cup.save
+        # byebug
         #we are geting the amount of toppings instances just put into the cup
         length = params[:cup][:topping_ids].length
 
@@ -48,7 +49,6 @@ class CupsController < ApplicationController
             end
             counter += 1
         end
-        byebug
         Cup.last.toppings << temp
 
 

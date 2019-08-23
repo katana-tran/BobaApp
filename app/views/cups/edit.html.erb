@@ -19,8 +19,8 @@
 <br>
 <br>
 <br>
-<%=Quote.rand_quote.quote%><br>
-<%="- #{Quote.rand_quote.author}"%>
+<%quote= Quote.rand_quote%><br>
+<%="#{quote.quote} -#{quote.author}"%>
 
 <%end%>
 

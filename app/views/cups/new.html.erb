@@ -16,31 +16,35 @@
 
         <%=f.collection_select :straw_id, Straw.all, :id, :color%><br>
 
-
+<a href="https://imggmi.com" target="_blank"><img src="https://cdn1.imggmi.com/uploads/2019/8/23/9c738052778c356752b23b17466a1071-full.png" border="40" width= "400" height = "500" align="left"/></a>
 
 <%=f.label 'Bubble'%><br>
 <%=f.label 'Amount'%><br>
 
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
-<%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%= f.select :amount, options_for_select(['0','1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
-<%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%= f.select :amount, options_for_select(['0','1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
-<%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%= f.select :amount, options_for_select(['0', '1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
-<%= f.select :amount, options_for_select(['1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%= f.select :amount, options_for_select(['0', '1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+<%=f.collection_select :topping_ids, Topping.all, :id, :name , { multiple: true }, {:name => 'topping_ids[]'}%>
+<%= f.select :amount, options_for_select(['0', '1', '2', '3']), {multiple: true }, {:name => 'amount[]'}%><br>
+
+
 <br>
 <%=f.submit 'Create Boba'%>
 <br>
 <br>
 <br>
-<%=Quote.rand_quote.quote%><br>
-<%="- #{Quote.rand_quote.author}"%>
+<%quote= Quote.rand_quote%><br>
+<%="#{quote.quote} -#{quote.author}"%>
 
 <%end%>
 

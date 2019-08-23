@@ -1,41 +1,105 @@
 
 
 <%= stylesheet_link_tag "boba-fall.css" %>
-<div class = "stage">
-<figure class = "image1"></figure>
 
-<%pic_arr=[]%>
+<%i=@cup.toppings.length%>
+<%temp=@cup.toppings%>
+
+<div class = "stage1">
+
+<%if i<5%>
 <%@cup.toppings.each do |top|%>
-<%pic_arr<< top.img_url%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1"
+ src= "<%=top.img_url%>"
+ alt="sam jackson">
+ </div>
 <%end%>
 
-<div class = "image1 bounce-7">
-<img class= "image1"
-src= <%=pic_arr[0]%> alt="sam jackson">
-</div>
-<div class = "image1 bounce-7">
-<img class= "image1"
-src=<%=pic_arr[1]%> alt="sam jackson">
-</div>
-<div class = "image1 bounce-7">
-<img class= "image1"
-src=<%=pic_arr[2]%> alt="sam jackson">
-</div>
-<div class = "image1 bounce-7">
-<img class= "image1"
-src=<%=pic_arr[3]%> alt="sam jackson">
-</div>
+<div class = "stage2">
 
-</div>
+<%elsif i>4 && i<=9%>
+<%x=0%>
+<%4.times do%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=@cup.toppings[x].img_url%>"
+ alt="sam jackson">
+ <%x+=1%>
+ </div>
+<%end%>
+<%temp.delete(keys.min)%>
+<%temp.delete(min)%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%#temp.shift(4)%>
+<%temp.each do |top|%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1"
+ src= "<%=top.img_url%>"
+ alt="sam jackson">
+ </div>
+<%end%>
 
-<div align = "right">
+
+<div class = "stage3">
+
+<%else%>
+<%x=0%>
+<%4.times do%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=temp[x].img_url%>"
+ alt="sam jackson">
+ <%x+=1%>
+ </div>
+<%end%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%#temp.shift(4)%>
+<%x=0%>
+<%5.times do%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1" src=" <%=temp[x].img_url%>"
+ alt="sam jackson">
+ <%x+=1%>
+ </div>
+<%end%>
+<%temp.delete(min)%>
+<%temp.delete(min)%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%temp.delete(hash.keys.min)%>
+<%#temp.shift(5)%>
+<%temp.each do |top|%>
+<%# <figure class = "image1"></figure> %>
+<div class = "image1 bounce-7">
+<img class= "image1"
+ src= "<%=top.img_url%>"
+ alt="sam jackson">
+ </div>
+<%end%>
+<%end%>
+
+
+
+<div align= "right">
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
+</div>
 
+<div align= "right">
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
     <img src = <%=topping.img_url%> width="150" height="150"></br>
     <%end%>
+</div>
+
 
 
 <p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
@@ -47,5 +111,5 @@ src=<%=pic_arr[3]%> alt="sam jackson">
 <br>
 <br>
 <br>
-<%=Quote.rand_quote.quote%><br>
-<%="- #{Quote.rand_quote.author}"%>
+<%quote= Quote.rand_quote%><br>
+<%="#{quote.quote} -#{quote.author}"%>
