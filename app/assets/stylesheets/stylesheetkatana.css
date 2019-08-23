@@ -1,0 +1,58 @@
+#foot{
+    
+    margin-bottom: 0px;
+    display: block;
+    
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+footer {
+    position: absolute;
+    right: 0;bottom:0;left:0;
+  }
+  
+.navbar {
+    
+    background-color: rgb(171, 171, 171);
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .details {
+    bottom: 50;
+    color: burlywood
+  }
+
+  .showpics{
+    padding-right: 4px;
+    align: right;
+  }
+
+
+.memepics{
+    border-radius: 25px;
+}
+
+#ip2 {
+    border-radius: 10px;
+    border: 1px solid rgb(171, 171, 171);
+    padding: 17px; 
+    width: 200px;
+    height: 8px;   
+}
+
+#ip3 {
+    border-radius: 10px;
+    border: 1px solid rgb(171, 171, 171);
+    padding: 17px; 
+    width: 300px;
+    height: 8px;   
+}
+
+
+.link-to-text-color { 
+    color: rgb(227, 133, 133); 
+}

@@ -1,23 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url("https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
 
-<p><h1>LOGIN PAGE!</h1></p>
+<div align=center>
+<p><h1>LOGIN</h1></p>
 
 <%= flash[:error_message] %>
 <div class="form-group">
 <%= form_for :login do |f|%>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
     <p><%= f.label :username%>
     <%= f.text_field :username, :placeholder => "enter username", :id => "ip2"%></p>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
     <p><%= f.label :password%>
     <%= f.password_field :password, :placeholder => "enter password", :id => "ip2"%></p>
     <input class="btn btn-outline-secondary" type="submit" value="LOG IN"><br>
 </div>
-    <p>New user? <%= link_to 'Sign Up Here', signup_path %></p>
+    <p>New user? <%= link_to 'Sign Up Here', signup_path, class: 'link-to-text-color' %></p>
     
     <%end%>
+</div>
 
-<details>
-  <summary>Copyright 2019.</summary>
-  <p>- Created by Ellyn Anderson and Katana Tran. All Rights Reserved. </p>
-</details>
 
