@@ -3,7 +3,6 @@ class Cup < ApplicationRecord
     has_many :toppings, through: :cup_toppings
     belongs_to :tea
     belongs_to :user
-    belongs_to :straw
     validates :name, presence: true
 
 end

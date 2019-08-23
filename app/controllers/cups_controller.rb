@@ -30,7 +30,7 @@ class CupsController < ApplicationController
         @cup = Cup.new(set_params)
 
         #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
-    # byebug
+    byebug
         @cup.save
         # byebug
         #we are geting the amount of toppings instances just put into the cup
@@ -100,7 +100,7 @@ class CupsController < ApplicationController
     private
 
     def set_params
-        params.require(:cup).permit(:straw_id, :tea_id, :user_id, :name, :amount, :size, topping_ids: [])
+        params.require(:cup).permit( :tea_id, :user_id, :name, :amount,  topping_ids: [])
 
     end
 
