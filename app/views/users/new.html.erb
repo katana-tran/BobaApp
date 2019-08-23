@@ -1,20 +1,22 @@
-<p><h1>SIGN UP PAGE!</h1></p>
+<div align=center>
+<p><h1>SIGN UP</h1></p>
 
 <%= flash[:error_message] %>
 <%= form_for @user, :html => {:class => "form-group"} do |f|%>
     <p><%= f.label :name%>
-    <%= f.text_field :name, :placeholder => "enter your name", :id => "ip2"%></p>
-    <small id="emailHelp" class="form-text text-muted">Pick something creative!</small>
+    <%= f.text_field :name, :placeholder => "your name", :id => "ip3"%></p>
     <p><%= f.label :username%>
-    <%= f.text_field :username, :placeholder => "enter a username", :id => "ip2"%></p>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <%= f.text_field :username, :placeholder => "pick something creative!", :id => "ip3"%></p>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
     <p><%= f.label :email%>
-    <%= f.text_field :email, :placeholder => "enter your email", :id => "ip2"%></p>
+    <%= f.text_field :email, :placeholder => "enter your email", :id => "ip3"%></p>
     <p><%= f.label :password%>
-    <%= f.password_field :password, :placeholder => "enter a password", :id => "ip2"%></p>
-    <p><%= f.submit 'SIGN IN'%></p>
-    <p>Returning user? <%= link_to 'Login Here', signin_path %></p>
-    
+    <%= f.password_field :password, :placeholder => "password", :id => "ip3"%></p>
+    <p><input class="btn btn-outline-secondary" type="submit" value="SIGN UP"></p>
+    <p>Returning user? <%= link_to 'Login Here', signin_path, class: 'link-to-text-color' %></p>
+  
 
 
 <%end%>
+</div>
+
