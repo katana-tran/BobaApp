@@ -14,3 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
  Rails.application.config.assets.precompile += %w( stylesheetkatana.css )
  Rails.application.config.assets.precompile += %w( style.css )
 Rails.application.config.assets.precompile += %w( boba-fall.css )
+
+Rails.application.config.assets.precompile += %w( tea-fill.css )

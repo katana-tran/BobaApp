@@ -1,6 +1,20 @@
 
+<%= stylesheet_link_tag "tea-fill.css" %>
+<%= stylesheet_link_tag "boba-fall.css" %>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="tea-fill tea" viewBox="0 0 128 128">
+  <g>
+<div class="tea"> height="100" transform="translate(20,0)" y="15"></rect>
+
+
+
+<div class="tea-fill tea" viewBox="0 0 128 128">
+<div class="tea" > <rect>height="100" transform="translate(20,0)" y="15"></rect>
+
+
 
 <%= stylesheet_link_tag "boba-fall.css" %>
+
 
 <%i=@cup.toppings.length%>
 <%temp=@cup.toppings%>
@@ -86,25 +100,26 @@
 
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
-</div>
 
-<div align= "right">
+
+
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
     <div class = "memepics">
         <img src = <%=topping.img_url%> width="150" height="150"></br>
     </div>
     <%end%>
-</div>
 
 
 
+<div align= "right">
 <details class = "details">
   <summary>Your Tea Facts: <%=@tea.name%></summary>
   <p> <%= @tea.description%></p>
   <p><%= @tea.origin%></p>
   <p><%= @tea.benefits%></p>
 </details>
+</div>
 
 <p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
 
@@ -117,5 +132,5 @@
 <br>
 <br>
 <br>
-<%quote= Quote.rand_quote%><br>
-<%="#{quote.quote} -#{quote.author}"%>
+<%#quote= Quote.rand_quote%>
+<%#="#{quote.quote} -#{quote.author}"%>

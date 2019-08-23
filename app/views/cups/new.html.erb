@@ -1,5 +1,8 @@
 
-<div align = "right">
+<%= stylesheet_link_tag "tea-fill.css" %>
+
+
+<div align = "left">
 <h1>Making Your BBT...</h1>
 
 <h4>Pick your bubbles!</h4>
@@ -11,12 +14,15 @@
         <%# <%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
         <p><%=f.label "tea type"%>
 
-        <%=f.collection_select :tea_id, Tea.all, :id, :name%><br>
-        <p><%=f.label "straw Color"%>
+        <%=f.collection_select :tea_id, Tea.all, :id, :name%>
+        <%#=f.label "straw Color"%>
 
-        <%=f.collection_select :straw_id, Straw.all, :id, :color%><br>
+        <%# <%=f.collection_select :straw_id, Straw.all, :id, :color%>
+        <%# <br> %>
 
-<a href="https://imggmi.com" target="_blank"><img src="https://cdn1.imggmi.com/uploads/2019/8/23/9c738052778c356752b23b17466a1071-full.png" border="40" width= "400" height = "500" align="left"/></a>
+<%# <img src="https://cdn1.imggmi.com/uploads/2019/8/23/9c738052778c356752b23b17466a1071-full.png" style="width:400px;height:600px;left:20px;top:60px; position:absolute;"> %>
+
+<img src="https://cdn1.imggmi.com/uploads/2019/8/23/9e2695b1f468b6218d937a7ab11da575-full.jpg"style="width:400px;height:600px;left:600px;top:60px; position:absolute;">
 
 <%=f.label 'Bubble'%><br>
 <%=f.label 'Amount'%><br>
@@ -43,10 +49,12 @@
 <br>
 <br>
 <br>
-<%quote= Quote.rand_quote%><br>
-<%="#{quote.quote} -#{quote.author}"%>
+<%# save_screenshot(../../app/assets/images.png') %>
+
 
 <%end%>
 
 </div>
+
+
 
