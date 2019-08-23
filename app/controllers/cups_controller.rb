@@ -30,7 +30,7 @@ class CupsController < ApplicationController
         @cup = Cup.new(set_params)
 
         #this creates one instance of the topping associated witht he cup, then we will need tomultiple by amount for the other instances
-    byebug
+    
         @cup.save
         # byebug
         #we are geting the amount of toppings instances just put into the cup
@@ -95,6 +95,14 @@ class CupsController < ApplicationController
             @cup.delete
         redirect_to cups_path
         end
+    end
+
+    def statistics
+        @most_cups = User.most_cups_made
+        @most_recent = User.most_recent_user
+        @most_used = Topping.most_used_topping
+        render :statistics
+        @most_used_teas = Tea.most_used_tea
     end
 
     private

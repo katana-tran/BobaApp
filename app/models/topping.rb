@@ -12,4 +12,17 @@ class Topping < ApplicationRecord
         end
     end
 
+    def self.most_used_topping
+        most_used = ""
+        amount_times_used = 0
+        Topping.all.each do |topping|
+            if topping.cup_toppings.length > amount_times_used
+                amount_times_used = topping.cup_toppings.length
+                most_used = topping.name
+            end
+        end
+        return "The most used topping is #{most_used} which has been used #{amount_times_used}."
+    end
+
+    
 end
