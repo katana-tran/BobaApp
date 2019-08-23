@@ -98,11 +98,11 @@ class CupsController < ApplicationController
     end
 
     def statistics
-        @most_cups = User.most_cups_made
-        @most_recent = User.most_recent_user
-        @most_used = Topping.most_used_topping
+        @most_cups = User.find_by(username:User.most_cups_made)
+        @most_recent = User.last.username
+        @most_used_topping = Topping.find_by(name:Topping.most_used_topping)
+        @tea = Tea.find_by(name:Tea.most_used_tea)
         render :statistics
-        @most_used_teas = Tea.most_used_tea
     end
 
     private

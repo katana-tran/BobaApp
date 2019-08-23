@@ -1,7 +1,12 @@
 
+
+<div style="border-top:2px solid silver">
+<%= flash[:error_message] %>
+<br>
+
 <h1>List of all Toppings names</h1>
 
 <%@toppings.each do |topping|%>
-    <%= link_to 'View Topping', topping_path(topping)%>
+    <%= link_to 'View Topping', topping_path(topping), class: 'link-to-text-color'%>
     <%= topping.name%> <br>
     <%end%>

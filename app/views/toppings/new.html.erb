@@ -1,10 +1,34 @@
 <%= flash[:error_message]%>
-<p> Make your toppin'!</p>
+<div align=center>
+
+<div style='border-top:2px solid 
+silver'><br>
+<h2> Make your toppin'!</h2>
+<br>
+
 
 <%=form_for @topping do |t|%>
     <%= t.label :name %>
-    <%= t.text_field :name%>
+    <%= t.text_field :name, :placeholder => "enter a name", :id => "ip2"%><br>
+    <br>
+    
     <%= t.label :img_url %>
-    <%= t.text_field :img_url%>
-    <%= t.submit%>
+    <%= t.text_field :img_url, :placeholder => "image url", :id => "ip2"%><small id="emailHelp" class="form-text text-muted">Acceptable formats are : .jpg|.jpeg|.png.</small><br>
+    
+    
+    <p><input class="btn btn-outline-secondary" type="submit" value="Make It"></p>
 <%end%>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

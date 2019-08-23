@@ -2,15 +2,17 @@
 <%= stylesheet_link_tag "tea-fill.css" %>
 
 
-<div align = "left">
+
+<div align = "left" style="border-top:2px solid silver"><br>
+<br>
 <h1>Making Your BBT...</h1>
 
-<h4>Pick your bubbles!</h4>
+
 
 <%=form_for @cup do |f|%>
 <%# <p><%=f.size :name%>
 <p><%=f.label "Name your bubble tea!"%>
-<%=f.text_field :name%></p>
+<%=f.text_field :name,:placeholder => "enter name", :id => "ip2"%></p>
         <%# <%=f.select :size, options_for_select(['Small', 'Medium', 'Large'])%>
         <p><%=f.label "tea type"%>
 
@@ -23,9 +25,12 @@
 <%# <img src="https://cdn1.imggmi.com/uploads/2019/8/23/9c738052778c356752b23b17466a1071-full.png" style="width:400px;height:600px;left:20px;top:60px; position:absolute;"> %>
 
 <img src="https://cdn1.imggmi.com/uploads/2019/8/23/9e2695b1f468b6218d937a7ab11da575-full.jpg"style="width:400px;height:600px;left:600px;top:60px; position:absolute;">
+<br>
 
-<%=f.label 'Bubble'%><br>
-<%=f.label 'Amount'%><br>
+<h4>Pick your bubbles!</h4>
+
+<%=f.label 'Bubble Amounts'%><br>
+
 
 
 <%=f.collection_select :topping_ids, Topping.all, :id, :name ,{ multiple: true }, {:name => 'topping_ids[]'} %>
@@ -45,7 +50,7 @@
 
 
 <br>
-<%=f.submit 'Create Boba'%>
+<p><input class="btn btn-outline-secondary" type="submit" value="Create It"></p>
 <br>
 <br>
 <br>
@@ -56,5 +61,9 @@
 
 </div>
 
+<br>
 
+<br>
+<br>
+<br>
 
