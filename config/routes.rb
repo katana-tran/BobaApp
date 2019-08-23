@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/login', to: 'auth#signout', as: 'signout'
   get '/signup', to: 'users#new', as: 'signup'
   post '/signup', to: 'users#create'
+  get '/statistics', to: 'cups#statistics', as: 'statistics'
   # get '/bubbles/edit', to: 'cups#edit'
   # get '/choices', to: 'cups#size'
   # get '/create-tea', to: 'cups#new', as: 'new_cup'

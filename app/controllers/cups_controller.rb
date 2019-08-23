@@ -97,6 +97,14 @@ class CupsController < ApplicationController
         end
     end
 
+    def statistics
+        @most_cups = User.most_cups_made
+        @most_recent = User.most_recent_user
+        @most_used = Topping.most_used_topping
+        render :statistics
+        @most_used_teas = Tea.most_used_tea
+    end
+
     private
 
     def set_params
