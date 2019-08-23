@@ -88,7 +88,13 @@
 
 
 
+<<<<<<< HEAD
 <div align= "right">
+=======
+
+
+
+>>>>>>> 1d1104499ab8de222120bc32ddfbf597096de5c6
 <h1><%=@cup.name%></h1>
 <h3>Current Toppings in your Cup</h3>
 </div>
@@ -96,11 +102,20 @@
 <div align= "right">
 <%@toppings.each do |topping|%>
     <%=topping.name%><br>
-    <img src = <%=topping.img_url%> width="150" height="150"></br>
+    <div class = "memepics">
+        <img src = <%=topping.img_url%> width="150" height="150"></br>
+    </div>
     <%end%>
 </div>
 
 
+
+<details class = "details">
+  <summary>Your Tea Facts: <%=@tea.name%></summary>
+  <p> <%= @tea.description%></p>
+  <p><%= @tea.origin%></p>
+  <p><%= @tea.benefits%></p>
+</details>
 
 <p><%= button_to 'Edit Cup', edit_cup_path(@cup), method: :get%></p>
 
@@ -108,8 +123,13 @@
 
 <p><%= button_to 'Back to All My Cups', cups_path, method: :get%></p>
 
+
+
 <br>
 <br>
 <br>
+<<<<<<< HEAD
 <%quote= Quote.rand_quote%><br>
 <%="#{quote.quote} -#{quote.author}"%>
+=======
+>>>>>>> 1d1104499ab8de222120bc32ddfbf597096de5c6

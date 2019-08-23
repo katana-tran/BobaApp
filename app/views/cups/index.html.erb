@@ -1,13 +1,14 @@
 <%= flash[:error_message] %>
-<h1>List of bubble CUPs names</h1>
+<h1>list of cup names</h1>
 <%# <h3><%= link_to 'Back to create', create_tea_path%>
 <%# </h3> %>
 
-<%@cups.each do |cup|%>
-    <%= link_to 'View Cup', cup_path(cup)%>
-    <%= cup.name%> <br>
-    <%end%>
 
+<ul style="list-style-type:circle;">
+    <%@cups.each do |cup|%>
+    <li><%=link_to 'View Cup', cup_path(cup), class: 'link-to-text-color'%>
+    <%= cup.name%> </li>
+    <%end%></ul>
 
 <p><%= link_to 'Create New Tea', new_cup_path %></p>
 <br>
@@ -16,7 +17,6 @@
 <%quote= Quote.rand_quote%><br>
 <%="#{quote.quote} -#{quote.author}"%>
 
-<p><%= link_to 'Sign Out', signout_path, method: :delete%></p>
 
 
 

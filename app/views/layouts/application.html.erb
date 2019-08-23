@@ -7,26 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" type="text/css" href="lib/assets/stylesheets/css/boba-fall.css">
-    <%# <link rel="stylesheet" type="text/css" href="../assets/stylesheets/boba-fall.html"> %>
+    <%= stylesheet_link_tag "stylesheetkatana.css" %>
+    <%= stylesheet_link_tag "style.css" %>
+    
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
+   
     
 
   </head>
 
-  <% if signed_in? %>
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-
-
- 
-    
+  
+  <div id='navbar' class="navbar navbar-expand-lg navbar-light bg-transparent">  
     <a class="navbar-brand" href="">
     <img src="https://cdn1.imggmi.com/uploads/2019/8/23/130f4542d48b227528069cbb95739f66-full.png" width="40" height="30" style = "padding-right: 10px" class="d-inline-block align-top" alt="">
     BobaApp
   </a>
-  <ul class="navbar-nav mr-auto">
+  
+  <% if signed_in? %>
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" <%=link_to 'My Cups', cups_path%><span class="sr-only">(current)</span></a>
       </li>
@@ -37,7 +36,7 @@
         <a class="nav-link" <%=link_to 'Create A Topping', new_topping_path%></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%=link_to 'Sign Out', signout_path%></a>
+        <a class="nav-link" <%=link_to 'Sign Out', signout_path, method: :delete%></a>
       </li>
       </ul>
   
@@ -52,22 +51,29 @@
     <a class="navbar-brand" href="">
 <img src= "https://cdn1.imggmi.com/uploads/2019/8/23/9c738052778c356752b23b17466a1071-full.png"
  width="40" height="30" style = "padding-right: 10px" class="d-inline-block align-top" alt="">
+    
+    
     BobaApp
   </a>
   <span class="navbar-text" >
+      <%else%>
+      <span class="navbar-text" >
       Made with love by Ellyn and Katana
     </span>
-  </div>
+    <%end%>
+</div>
 </nav>
 
-<%end%>
 
   <body>
-  
     <%= yield %>
-    <footer>
-  <iframe id="foot" src="https://open.spotify.com/embed/album/0S0KGZnfBGSIssfF54WSJh" width="window.outerWidth" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-  </footer>
   </body>
   
+  <iframe id="foot" src="https://open.spotify.com/embed/album/0S0KGZnfBGSIssfF54WSJh" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  
+  <div class="navbar">
+  <ul><%quote= Quote.rand_quote%><br>
+  <%="#{quote.quote} - #{quote.author}"%></ul>
+</div>
+
 </html>
